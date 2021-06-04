@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --cyanLight: hsl(179, 62%, 43%, 0.699);
+    --bright: hsl(71, 73%, 54%);
+    --lightGray: hsl(204, 43%, 93%);
+    --grayishBlue: hsl(218, 22%, 67%);
+    --whiteTransparent: rgb(255, 255, 255, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: var(--lightGray);
+}
+
+/* Margins */
+
+.mb-25{
+    margin-bottom: 25px;
+}
+
+.mb-15{
+    margin-bottom: 15px;
+}
+/* Content */
+
+.container {
+    display: grid;
+    margin: 50px 280px 30px 280px;
+}
+
+.card{
+    display: grid;
+    grid-template-areas: "community community" "price about";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    box-shadow: 0 10px 35px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+}
+
+.community {
+    grid-area: community;
+    padding: 50px;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.community h2{
+    font-size: 2rem;
+    color: var(--cyan);
+}
+
+.community h4{
+    font-size: 1.5rem;
+    color: var(--bright);
+}
+
+.community p{
+    font-size: 1rem;
+    color: var(--grayishBlue);
+}
+
+.price {
+    grid-area: price;
+    background-color: var(--cyan);
+    padding: 50px;
+    color: white;
+    border-radius: 0px 0px 0px 10px;
+}
+
+.price h4{
+    font-size: 1.5rem;
+}
+
+.price .info-price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.price .info-price h2{
+    font-size: 2rem;
+    padding-right: 20px;
+}
+
+.price .info-price p{
+    font-size: 1rem;
+    color: var(--whiteTransparent);
+}
+
+.btn-primary{
+    background-color: var(--bright);
+    border: none;
+    color: white;
+    font-family: 'Karla', sans-serif;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 10px 35px rgb(0 0 0 / 20%);
+}
+
+.about {
+    grid-area: about;
+    background-color: var(--cyanLight);
+    padding: 50px 70px 50px 50px;
+    color: white;
+    border-radius: 0px 0px 10px 0px;
+}
+
+.about h4{
+    font-size: 1.5rem;
+}
+
+.about p{
+    line-height: 25px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--grayishBlue);
+    margin-bottom: 50px;
+}
+.attribution a {
+    color: var(--grayishBlue);
+    font-weight: 700;
+}
+
+@media (max-width: 1024px){
+    .container{
+        margin: 60px;
+    }
+}
+
+@media (max-width: 500px){
+    .container{
+        margin: 30px;
+    }
+    .card{
+        grid-template-areas: "community" "price" "about";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    .price{
+        border-radius: 0px;
+    }
+    .about{
+        border-radius: 0px 0px 10px 10px;;
+    }
+}
+
+@media (max-width:320px){
+    .container{
+        margin: 20px;
+    }
+}
